@@ -1,4 +1,4 @@
-# Frontend 101
+# Frontend 101 (ping Ben Che or Harry Lu if you need help)
 
 Here's how to get this ReactJS demo working!
 
