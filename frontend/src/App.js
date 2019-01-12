@@ -23,13 +23,13 @@ class App extends Component {
 		// "synchronous" way
 		axios
 			// I make a GET request to localhost:8080
-			.get('http://localhost:8080/')
+			.get('http://localhost:8080/home')
 			// Here, I'm saying that when I get the data back, I'm going to save it within this instance's state object
 			.then((response) => {
 				console.log('this is the response from the server');
 				console.log(response);
-				this.setState({ data: { ...response.data } }, () =>
-					console.log(this.state.data)
+				this.setState({ data: response.data }, () =>
+					console.log(this.state)
 				);
 			})
 			// Here, I console log any errors that may occur
@@ -44,7 +44,10 @@ class App extends Component {
 				<div className="App">
 					<div className="BodyContainer">
 						<div className="HeaderContainer">
-							<Header title={this.state.title} />
+							<Header
+								title={this.state.data.header.title}
+								links={this.state.data.header.nav}
+							/>
 						</div>
 
 						{/* <div className="ContentContainer">placeholder</div> */}
@@ -54,7 +57,7 @@ class App extends Component {
 		}
 		// I want to return an error message on the DOM if I don't get the data back - this is
 		// probably because your server is off
-		return <p>Perhaps your server isn't on?</p>;
+		return <p>Loading...or perhaps your server isn't on?</p>;
 	}
 }
 

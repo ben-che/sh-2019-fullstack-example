@@ -3,15 +3,17 @@ import './Header.css';
 
 export default function Header(props) {
 	// Because I'm receiving an array of links, I can loop through the list and
-	// return each name inside a p tag
-
+	// return each "link" inside a p tag
 	const linksJSX = props.links.map((element) => {
-		return <p>{element}</p>;
+		return <p className="HeaderLink">{element}</p>;
 	});
+
 	return (
 		<div className="HeaderContainer">
+			{/* I access, then render the title that was passed down through props */}
 			<h1>{props.title}</h1>
-			<div className="HeaderLinks">{linksJSX}</div>
+			{/* I render the JSX from the map statement above */}
+			<div className="HeaderLinkContainer">{linksJSX}</div>
 		</div>
 	);
 }

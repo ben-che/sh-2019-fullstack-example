@@ -1,6 +1,6 @@
-var express = require('express');
-var cors = require('cors');
-var app = express();
+const express = require('express');
+const cors = require('cors');
+const app = express();
 
 // cors is cross origin resource sharing - pretty much, we run into this
 //  issue because a request isn't being made from the same origin that

@@ -1,4 +1,15 @@
 .HeaderContainer {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.HeaderLinkContainer {
+    display: flex;
+}
+
+.HeaderLink {
+    margin-right: 10px;
 }
