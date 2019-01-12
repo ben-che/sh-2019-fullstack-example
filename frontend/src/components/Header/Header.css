@@ -1,0 +1,4 @@
+.HeaderContainer {
+    display: flex;
+    flex-direction: row;
+}
