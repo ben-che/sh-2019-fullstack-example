@@ -4,8 +4,12 @@ import './Header.css';
 export default function Header(props) {
 	// Because I'm receiving an array of links, I can loop through the list and
 	// return each "link" inside a p tag
-	const linksJSX = props.links.map((element) => {
-		return <p className="HeaderLink">{element}</p>;
+	const linksJSX = props.links.map((element, index) => {
+		return (
+			<p className="HeaderLink" key={index + element}>
+				{element}
+			</p>
+		);
 	});
 
 	return (

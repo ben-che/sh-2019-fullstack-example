@@ -41,12 +41,13 @@ class App extends Component {
 	//  for each element inside the array
 
 	renderProjects() {
-		return this.state.data.content.map((project) => {
+		return this.state.data.content.map((project, index) => {
 			return (
 				<Project
 					title={project.title}
 					description={project.description}
 					image={project.image}
+					key={index + project.title}
 				/>
 			);
 		});

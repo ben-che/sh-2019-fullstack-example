@@ -1,4 +1,4 @@
-# Frontend 101 @ Starterhacks 2019 (ping Ben Che or Harry Lu on Slack if you need help)
+# Frontend 101 @ Starterhacks 2019 (ping Ben Che or Harry Lu on Slack if you need help with setup / have any questions)
 
 Here's how to get this ReactJS demo working!
 
