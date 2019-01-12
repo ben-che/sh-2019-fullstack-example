@@ -6,7 +6,26 @@
 }
 
 .BodyContainer {
-  width: 1200px;
+  width: 1000px;
   padding: 75px;
   background-color: white;
+}
+
+.HeaderContainer {
+  margin-bottom: 50px;
+}
+
+.ContentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .App {
+    align-items: center;
+  }
+  .ContentContainer {
+    flex-direction: column;
+    align-items: center;
+  }
 }

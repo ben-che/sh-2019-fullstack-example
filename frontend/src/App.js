@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
+import Project from './components/Project';
 
 // Axios is a NPM package that we use to make network requests. There's also the Fetch API, but
 // I avoid using that because it isn't compatible with all browsers
@@ -36,6 +37,21 @@ class App extends Component {
 			.catch((e) => console.log(e));
 	}
 
+	// Here, I write a function to loop through all the project array I grabbed from the server, and render a Project Component
+	//  for each element inside the array
+
+	renderProjects() {
+		return this.state.data.content.map((project) => {
+			return (
+				<Project
+					title={project.title}
+					description={project.description}
+					image={project.image}
+				/>
+			);
+		});
+	}
+
 	render() {
 		// I only want to render the website when I have finished receiving data from the back end, and I've
 		//  saved it in state:
@@ -50,7 +66,9 @@ class App extends Component {
 							/>
 						</div>
 
-						{/* <div className="ContentContainer">placeholder</div> */}
+						<div className="ContentContainer">
+							{this.renderProjects()}
+						</div>
 					</div>
 				</div>
 			);
