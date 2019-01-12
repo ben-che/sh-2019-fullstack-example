@@ -1,30 +1,60 @@
+// Here, we import the packages that we need inside this App file
 import React, { Component } from 'react';
 import './App.css';
+import Header from './components/Header';
 
+// Axios is a NPM package that we use to make network requests. There's also the Fetch API, but
+// I avoid using that because it isn't compatible with all browsers
 const axios = require('axios');
 
 class App extends Component {
+	// Think of state this as a way to hold data - the information here
+	//  affects the way that your elements render
 	state = {};
 	// Using a react lifecycle method, we make a request to our server
-	// to grab all of the data we may need, and store it within state
+	// to grab all of the data we may need, and store it within state as soon
+	// as this component mounts on the DOM
 	componentDidMount() {
+		// I use the axois package to hit the backend servers - specifically the "data" endpoint -
+		//  from there, the code within server.js inside the back end folder will run, and return a
+		// 	bunch of data
+
+		// Axios makes use of Javascript Promises - a way of us to resolve async issues in a more
+		// "synchronous" way
 		axios
+			// I make a GET request to localhost:8080
 			.get('http://localhost:8080/')
-			.then((res) => {
-				console.log(res);
+			// Here, I'm saying that when I get the data back, I'm going to save it within this instance's state object
+			.then((response) => {
+				console.log('this is the response from the server');
+				console.log(response);
+				this.setState({ data: { ...response.data } }, () =>
+					console.log(this.state.data)
+				);
 			})
+			// Here, I console log any errors that may occur
 			.catch((e) => console.log(e));
 	}
 
 	render() {
-		return (
-			<div className="App">
-				<div className="BodyContainer">
-					<div className="HeaderContainer">{/* placeholder */}</div>
-					<div className="ContentContainer">{/* placeholder */}</div>
+		// I only want to render the website when I have finished receiving data from the back end, and I've
+		//  saved it in state:
+		if (this.state.data) {
+			return (
+				<div className="App">
+					<div className="BodyContainer">
+						<div className="HeaderContainer">
+							<Header title={this.state.title} />
+						</div>
+
+						{/* <div className="ContentContainer">placeholder</div> */}
+					</div>
 				</div>
-			</div>
-		);
+			);
+		}
+		// I want to return an error message on the DOM if I don't get the data back - this is
+		// probably because your server is off
+		return <p>Perhaps your server isn't on?</p>;
 	}
 }
 

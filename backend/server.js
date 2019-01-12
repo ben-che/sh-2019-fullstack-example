@@ -35,7 +35,7 @@ const data = {
 
 // This is our main route - we return the data object above as
 // a JSON object to the front end so it can be rendered
-app.get('/', function(req, res) {
+app.get('/home', function(req, res) {
 	res.json(data);
 });
 
