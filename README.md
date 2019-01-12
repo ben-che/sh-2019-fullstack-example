@@ -1,4 +1,4 @@
-# Frontend 101
+# Frontend 101 @ Starterhacks 2019 (ping Ben Che or Harry Lu on Slack if you need help)
 
 Here's how to get this ReactJS demo working!
 
