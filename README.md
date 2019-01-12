@@ -1,5 +1,7 @@
 # Frontend 101 @ Starterhacks 2019 (ping Ben Che or Harry Lu on Slack if you need help with setup / have any questions)
 
+Slides: https://docs.google.com/presentation/d/1o7fuG-NzM4nhiOzt0xYYhbDA0bBSv9Ycsad6dsTzoDU/edit
+
 Here's how to get this ReactJS demo working!
 
 Step 1: clone this repo!
@@ -40,3 +42,4 @@ Then, go to [localhost:3000](http://localhost:3000) in your web browser and you 
 
 - Express server: https://expressjs.com/en/api.html
 - ReactJS: https://reactjs.org/
+- How To Chill: https://www.wikihow.com/Chill
